@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UTS PemrogramanWeb Rifaldi Setiawan 230401010132</title>
+	<style>
+		.txt-warna1{
+			color: rgb(0, 33, 154);
+		}
+		.txt-warna2{
+			color: rgb(0, 120, 6);
+		}
+		.container{
+			max-width: 210mm;
+			background-color: white;
+			padding: 10px;
+			margin:auto;
+		}
+		body{
+			background-color: rgb(166, 166, 166);
+		}
+
+		.font1{
+			font-family: sans-serif;
+		}
+        table {
+            border-collapse: separate;
+			border-spacing: 0;
+            width: 60%;
+            margin: 50px 0;
+            font-size: 18px;
+            text-align: center;
+        }
+        th, td {
+            padding: 12px;
+            border-left: 1px solid #b3b3b3;
+			border-right: 1px solid #b3b3b3;
+        }
+        th {
+            color: white;
+        }
+		table tr:first-child th:first-child {
+			border-top-left-radius: 6px;
+		}
+		table tr:first-child th:last-child {
+			border-top-right-radius: 6px;
+		}
+		table tr:last-child td:first-child {
+			border-bottom-left-radius: 6px;
+		}
+		table tr:last-child td:last-child {
+			border-bottom-right-radius: 6px;
+		}
+		table tr:last-child td {
+			border-bottom: 1px solid #b3b3b3;
+		}
+
+        .start {
+            background-color: #1db5c0;
+            color: white;
+        }
+        .pro {
+            background-color: #34495e;
+            color: white;
+        }
+        .ultimate {
+            background-color: #e67e22;
+            color: white;
+        }
+		.start-title {
+			color: #1db5c0;
+			font-weight: bold;
+		}
+		.pro-title {
+			color: #34495e;
+			font-weight: bold;
+		}
+		.ultimate-title {
+			color: #e67e22;
+			font-weight: bold;
+		}
+        .signup-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .start-btn {
+            background-color: #1db5c0;
+        }
+        .pro-btn {
+            background-color: #34495e;
+        }
+        .ultimate-btn {
+            background-color: #e67e22;
+        }
+		.start-td, .pro-td, .ultimate-td {
+			font-weight: bold;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		.start-td{
+			color: #1db5c0;
+		}
+		.pro-td{
+			color: #34495e;
+		}
+		.ultimate-td{
+			color: #e67e22;
+		}
+
+		.start-td hr{
+			border: 1px solid #1db5c0;
+		}
+		.pro-td hr{
+			border: 1px solid #34495e;
+		}
+		.ultimate-td hr{
+			border: 1px solid #e67e22;
+		}
+
+        .price-container {
+            display: flex;
+            align-items: center;
+			justify-content: center;
+        }
+        .price {
+            font-size: 36px;
+            font-weight: bold;
+            padding-right: 5px;
+        }
+        .details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .cents {
+            font-size: 14px;
+        }
+        .per-month {
+            font-size: 14px;
+        }
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<h4>Halaman HTML oleh Rifaldi Setiawan (230401010132)</h4>
+
+		<p class="txt-warna1">HTML (HyperText Markup Language) adalah bahasa standar yang digunakan untuk membuat dan menyusun halaman web. HTML memberikan kerangka dasar dari sebuah halaman web dan memungkinkan pengembang web untuk menentukan struktur dan tata letak konten, contoh elemen dasar pada HTML adalah <b>&lt;head&gt;, &lt;title&gt;, &lt;body&gt;</b>, apabila kita ingin menulis elemen html di dalam html, maka kita harus escape tag seperti ini &amp;lt;p&amp;gt; (Bisa dilihat dalam kodingan mengenai cara saya menapilkan head/title/body) </p>
+
+		<p class="txt-warna2">CSS, atau Cascading Style Sheets, adalah bahasa stylesheet yang digunakan untuk menambahkan style ke elemen-elemen HTML di sebuah halaman web. Dengan CSS, kita dapat mengontrol tampilan dan tata letak dari berbagai elemen HTML dengan cara yang lebih fleksibel dan efisien. Contoh penerapan CSS dalam stylesheet mencakup berbagai aspek desain, seperti mengubah warna tulisan, menambahkan margin dan padding, menentukan jenis dan ukuran font, mengatur tata letak menggunakan grid atau flexbox, dan banyak lagi. Dengan menggunakan CSS, kita bisa memastikan bahwa halaman web tampil konsisten di berbagai perangkat dan ukuran layar, serta meningkatkan estetika dan keterbacaan konten web secara keseluruhan. Misalnya, untuk mengubah warna tulisan pada paragraf,
+		</p>
+
+		<p>Di dalam HTML kita dapat membuat hyperlink dengan menggunakan tag <b>&lt;a&gt;</b>, Contohnya adalah : <a href="https://www.google.com">google.com</a> dan juga kita dapat menambahkan style di tag <b>&lt;a&gt;</b> seperti berikut : <a href="https://rifaldi34.github.io" style="background-color: blue;color:white">rifaldi34.github.io</a></p>
+
+		<p>Kita juga dapat membuat gambar di html dengan tag <b>&lt;img&gt;</b>, contohnya : <br>
+			<img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@1.5x.png" alt="Image">
+		</p>
+
+		<p>
+			Dan juga dapat membuat list menggunakan tag <b>&lt;ul&gt;</b> dan <b>&lt;li&gt;</b>
+			<ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JavaScript</li>
+			</ul>
+		</p>
+
+		<div>
+			Berikut contoh elemen table yang lebih kompleks untuk menunjukan kemampuan HTML
+
+			<table class="font1">
+				<tr>
+					<th class="start">START</th>
+					<th class="pro">PRO</th>
+					<th class="ultimate">ULTIMATE</th>
+				</tr>
+				<tr>
+					<td class="start-title">
+						<div class="price-container">
+							<div class="price">$15</div>
+							<div class="details">
+								<div class="cents">.99</div>
+								<div class="per-month">/mo</div>
+							</div>
+						</div>
+					</td>
+					<td class="pro-title">
+						<div class="price-container">
+							<div class="price">$25</div>
+							<div class="details">
+								<div class="cents">.99</div>
+								<div class="per-month">/mo</div>
+							</div>
+						</div>
+					</td>
+					<td class="ultimate-title">
+						<div class="price-container">
+							<div class="price">$35</div>
+							<div class="details">
+								<div class="cents">.99</div>
+								<div class="per-month">/mo</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="start-td">✓<hr></td>
+					<td class="pro-td">✓<hr></td>
+					<td class="ultimate-td">✓<hr></td>
+				</tr>
+				<tr>
+					<td class="start-td">✗<hr></td>
+					<td class="pro-td">✓<hr></td>
+					<td class="ultimate-td">✓<hr></td>
+				</tr>
+				<tr>
+					<td class="start-td">✗<hr></td>
+					<td class="pro-td">✓<hr></td>
+					<td class="ultimate-td">✓<hr></td>
+				</tr>
+				<tr>
+					<td class="start-td">✗<hr></td>
+					<td class="pro-td">✗<hr></td>
+					<td class="ultimate-td">✓<hr></td>
+				</tr>
+				<tr>
+					<td><a href="#" class="signup-btn start-btn">SIGN-UP</a></td>
+					<td><a href="#" class="signup-btn pro-btn">SIGN-UP</a></td>
+					<td><a href="#" class="signup-btn ultimate-btn">SIGN-UP</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+
+</body>
+</html>
