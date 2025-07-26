@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Scanner Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; padding: 2rem; }
+        #log { margin-top: 1rem; width: 100%; max-width: 400px; height: 200px; border: 1px solid #ccc; padding: 0.5rem; overflow-y: auto; }
+        #status { margin-top: 1rem; }
+        #status span { display: inline-block; min-width: 100px; }
+    </style>
+</head>
+<body>
+    <h1>QR Scanner Test</h1>
+    <p>Scan a QR code with your hardware scanner (acts as keyboard).<br>
+       This demo uses a timer to detect end of scan.</p>
+    <div>
+        <label for="manualInput">Manual Input (optional):</label><br>
+        <input type="text" id="manualInput" placeholder="Click here to type manually">
+    </div>
+
+    <div id="status">
+        <div>Current Buffer: <span id="currentBuffer"></span></div>
+        <div>Timer: <span id="timerDisplay">0</span> ms</div>
+    </div>
+
+    <div id="log"></div>
+
+    <script>
+        (function() {
+            let buffer = '';
+            let scanTimer = null;
+            let displayInterval = null;
+            let timerStart = 0;
+            const scanDelay = 500; // ms to wait after last char
+
+            const logBox = document.getElementById('log');
+            const bufferEl = document.getElementById('currentBuffer');
+            const timerEl = document.getElementById('timerDisplay');
+
+            function processScan(code) {
+                alert('Scanned: ' + code);
+                const p = document.createElement('div');
+                p.textContent = 'Scanned: ' + code;
+                logBox.appendChild(p);
+                logBox.scrollTop = logBox.scrollHeight;
+                updateStatus('', 0);
+            }
+
+            function updateStatus(buf, remaining) {
+                bufferEl.textContent = buf;
+                timerEl.textContent = remaining.toFixed(0);
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (document.activeElement === document.getElementById('manualInput')) {
+                    return; // ignore manual typing
+                }
+                if (e.key.length === 1) {
+                    buffer += e.key;
+                    e.preventDefault();
+                }
+                // restart timers
+                clearTimeout(scanTimer);
+                clearInterval(displayInterval);
+
+                timerStart = Date.now();
+                updateStatus(buffer, scanDelay);
+
+                displayInterval = setInterval(() => {
+                    const elapsed = Date.now() - timerStart;
+                    const remaining = Math.max(0, scanDelay - elapsed);
+                    updateStatus(buffer, remaining);
+                }, 10);
+
+                scanTimer = setTimeout(() => {
+                    if (buffer.length > 0) {
+                        processScan(buffer);
+                        buffer = '';
+                    }
+                    clearInterval(displayInterval);
+                }, scanDelay);
+            });
+        })();
+    </script>
+</body>
+</html>
